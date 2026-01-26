@@ -19,10 +19,10 @@ def count_species(villagers: list[tuple[str, str]]) -> dict[str, int]:
     Returns:
         Dictionary mapping species to count of villagers
     """
-    # YOUR CODE HERE
-    # Remove pass when you implement
-    pass
-
+    result = {}
+    for v in villagers:
+        result[v[1]] = result.get(v[1], 0) + 1
+    return result
 
 def test_count_species_basic():
     villagers = [("Maple", "Cub"), ("Raymond", "Cat"), ("Sherb", "Goat"), ("Marina", "Octopus")]
@@ -57,3 +57,10 @@ def test_count_species_many_species():
         ("Poppy", "Squirrel")
     ]
     assert count_species(villagers) == {"Squirrel": 2, "Cub": 1, "Eagle": 1, "Deer": 1}
+
+test_count_species_basic()
+test_count_species_duplicates()
+test_count_species_all_same()
+test_count_species_empty()
+test_count_species_single()
+test_count_species_many_species()
