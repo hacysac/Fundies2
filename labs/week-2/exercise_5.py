@@ -28,32 +28,31 @@ def personality_mapping(villagers: dict[str, str]) -> dict[str, list[str]]:
 
 
 def test_personality_mapping_basic():
-    villagers = {
-        "Maple": "Normal",
-        "Raymond": "Smug",
-        "Sherb": "Lazy"
-    }
+    villagers = {"Maple": "Normal", "Raymond": "Smug", "Sherb": "Lazy"}
     assert personality_mapping(villagers) == {
         "Normal": ["Maple"],
         "Smug": ["Raymond"],
-        "Lazy": ["Sherb"]
+        "Lazy": ["Sherb"],
     }
+
 
 def test_personality_mapping_multiple():
     villagers = {
         "Maple": "Normal",
         "Stitches": "Normal",
         "Raymond": "Smug",
-        "Bob": "Smug"
+        "Bob": "Smug",
     }
     assert personality_mapping(villagers) == {
         "Normal": ["Maple", "Stitches"],
-        "Smug": ["Raymond", "Bob"]
+        "Smug": ["Raymond", "Bob"],
     }
+
 
 def test_personality_mapping_empty():
     villagers = {}
     assert personality_mapping(villagers) == {}
+
 
 test_personality_mapping_basic()
 test_personality_mapping_multiple()

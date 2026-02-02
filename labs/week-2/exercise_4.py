@@ -24,13 +24,24 @@ def count_species(villagers: list[tuple[str, str]]) -> dict[str, int]:
         result[v[1]] = result.get(v[1], 0) + 1
     return result
 
+
 def test_count_species_basic():
-    villagers = [("Maple", "Cub"), ("Raymond", "Cat"), ("Sherb", "Goat"), ("Marina", "Octopus")]
+    villagers = [
+        ("Maple", "Cub"),
+        ("Raymond", "Cat"),
+        ("Sherb", "Goat"),
+        ("Marina", "Octopus"),
+    ]
     assert count_species(villagers) == {"Cub": 1, "Cat": 1, "Goat": 1, "Octopus": 1}
 
 
 def test_count_species_duplicates():
-    villagers = [("Maple", "Cub"), ("Stitches", "Cub"), ("Raymond", "Cat"), ("Bob", "Cat")]
+    villagers = [
+        ("Maple", "Cub"),
+        ("Stitches", "Cub"),
+        ("Raymond", "Cat"),
+        ("Bob", "Cat"),
+    ]
     assert count_species(villagers) == {"Cub": 2, "Cat": 2}
 
 
@@ -54,9 +65,10 @@ def test_count_species_many_species():
         ("Judy", "Cub"),
         ("Apollo", "Eagle"),
         ("Fauna", "Deer"),
-        ("Poppy", "Squirrel")
+        ("Poppy", "Squirrel"),
     ]
     assert count_species(villagers) == {"Squirrel": 2, "Cub": 1, "Eagle": 1, "Deer": 1}
+
 
 test_count_species_basic()
 test_count_species_duplicates()

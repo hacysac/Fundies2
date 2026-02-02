@@ -28,6 +28,7 @@ def process_game_ratings(ratings: list[int]) -> list[int]:
 
     return sorted(result)
 
+
 def test_process_game_ratings_basic():
     assert process_game_ratings([7, 9, 5, 10]) == [5, 7, 9, 10]
 
@@ -46,6 +47,7 @@ def test_process_game_ratings_all_invalid():
 
 def test_process_game_ratings_boundary():
     assert process_game_ratings([1, 10, 5]) == [1, 5, 10]
+
 
 test_process_game_ratings_basic()
 test_process_game_ratings_with_invalid()
